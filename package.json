@@ -1,8 +1,9 @@
 {
-  "name": "geojson-to-svg",
-  "version": "1.1.4",
+  "name": "geojson-to-svg-es",
+  "version": "0.0.1",
   "description": "primitive SVG renderer for geojson with feature styles",
-  "main": "index.js",
+  "main": "dist/cjs/index.js",
+  "module": "dist/es/index.js",
   "bin": {
     "geojson2svg": "bin/geojson2svg",
     "measure-font": "bin/measure_font"
@@ -20,11 +21,12 @@
     "lint": "eslint ./src/",
     "build-js": "browserify index.js -v -o dist/geojson-to-svg-src.js",
     "compress-js": "uglifyjs dist/geojson-to-svg-src.js -o dist/geojson-to-svg.js -m --comments",
-    "build": "npm run lint && npm run test && npm run build-js && npm run compress-js"
+    "build": "npm run lint && npm run test && npm run build-js && npm run compress-js",
+    "build-es": "rollup -c rollup.config.mjs"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/w8r/geojson2svg.git"
+    "url": "git+https://github.com/pluto369/geojson2svg.git"
   },
   "keywords": [
     "geojson",
@@ -33,32 +35,30 @@
     "stylesheet",
     "gis"
   ],
-  "author": "Alexander Milevski <info@w8r.name>",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/w8r/geojson2svg/issues"
+  "author": {
+    "name": "pluto369",
+    "email": "1811783973@qq.com"
   },
-  "homepage": "https://github.com/w8r/geojson2svg#readme",
+  "license": "MIT",
+  "homepage": "https://github.com/pluto369/geojson2svg#readme",
   "devDependencies": {
+    "@rollup/plugin-commonjs": "^25.0.2",
+    "@rollup/plugin-json": "^6.0.0",
     "browserify": "^17.0.0",
     "deep-extend": "^0.6.0",
-    "eslint": "^6.8.0",
+    "eslint": "^8.44.0",
     "lodash.flatten": "^4.4.0",
-    "nodemon": "^2.0.6",
-    "simplify-js": "^1.2.1",
+    "nodemon": "^2.0.22",
+    "rollup": "^3.26.0",
+    "simplify-js": "^1.2.4",
     "svg-polygon-decorator": "^1.0.7",
-    "tap-spec": "^5.0.0",
-    "tape": "^5.0.1",
-    "uglifyjs": "^2.4.10"
+    "tap-spec": "^5.0.0"
   },
   "dependencies": {
-    "geojson-project": "^1.0.1",
+    "geojson-project": "^2.0.1",
     "json-extend": "^0.1.0",
-    "minimist": "^1.2.5",
-    "string-hash": "^1.1.0",
-    "transformation-matrix-js": "^2.6.5"
-  },
-  "optionalDependencies": {
-    "nightmare": "^3.0.2"
+    "minimist": "^1.2.8",
+    "string-hash": "^1.1.3",
+    "transformation-matrix-js": "^2.7.6"
   }
 }
