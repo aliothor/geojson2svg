@@ -2,7 +2,7 @@ var extend      = require('json-extend');
 var hash        = require('string-hash');
 var projectgj   = require('geojson-project');
 var getFontData = require('./get_font_data');
-var Matrix      = require('transformation-matrix-js').Matrix;
+var Matrix      = require('transformation-matrix-js-es');
 
 var bboxUtils       = require('./bbox');
 var extendBBox      = bboxUtils.extend;

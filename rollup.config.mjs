@@ -5,11 +5,11 @@ export default {
   input: 'index.js',
   output: [
     {
-      dir: 'dist/cjs/index.js',
+      file: 'dist/cjs/index.js',
       format: 'cjs',
     },
     {
-      dir: 'dist/es/index.js',
+      file: 'dist/es/index.js',
       format: 'es',
     },
   ],
